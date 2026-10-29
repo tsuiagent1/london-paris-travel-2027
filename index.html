@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>崔董 2027 倫敦・巴黎十日雙城遊行程手冊</title>
+  <title>崔董 2027 倫敦・巴黎十日雙城遊隨身手冊</title>
   <style>
     :root {
       --bg: #F9F8F5;
@@ -91,7 +91,7 @@
       gap: 4px;
     }
 
-    /* 時差與氣候小幫手條 (人情味、實用度) */
+    /* 時差與氣候小幫手條 */
     .travel-tip-bar {
       margin: 14px 20px 0 20px;
       background: #FFFFFF;
@@ -129,7 +129,7 @@
       position: sticky;
       top: 0;
       z-index: 99;
-      background: rgba(249, 248, 245, 0.95);
+      background: rgba(249, 248, 245, 0.96);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
@@ -379,7 +379,7 @@
       font-size: 13px;
       color: var(--text-sub);
       margin-top: 5px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* 交通提示專用方塊 */
@@ -391,6 +391,12 @@
       margin-top: 8px;
       font-size: 12.5px;
       color: #1A365D;
+    }
+
+    .transit-block.paris-transit {
+      background: #FDF6F0;
+      border-left-color: #C45535;
+      color: #78350F;
     }
 
     .transit-block .route-line {
@@ -501,7 +507,7 @@
       margin-top: 1px;
     }
 
-    /* 住宿與緊急聯絡區 */
+    /* 住宿與資訊區 */
     .hotel-badge {
       display: inline-flex;
       align-items: center;
@@ -521,8 +527,8 @@
       background: #FFFFFF;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 4px 10px;
-      font-size: 11px;
+      padding: 5px 11px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--primary);
       cursor: pointer;
@@ -575,6 +581,47 @@
       line-height: 1.5;
     }
 
+    .alert-box.danger {
+      background: #FEF2F2;
+      border-color: #FECACA;
+      color: #991B1B;
+    }
+
+    .alert-box.success {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+      color: #166534;
+    }
+
+    /* 實用法語卡片與清單 */
+    .phrase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .phrase-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #F9F9F8;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      font-size: 13px;
+    }
+
+    .phrase-fr {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .phrase-zh {
+      color: var(--text-sub);
+      font-size: 12px;
+    }
+
     /* 底部快速操作浮動列 (Mobile 特色) */
     .bottom-bar {
       position: fixed;
@@ -583,7 +630,7 @@
       right: 0;
       background: #FFFFFF;
       border-top: 1px solid var(--border);
-      padding: 10px 16px;
+      padding: 8px 12px;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -595,7 +642,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      gap: 2px;
       background: none;
       border: none;
       color: var(--text-sub);
@@ -619,16 +666,17 @@
       bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(36, 41, 47, 0.9);
+      background: rgba(36, 41, 47, 0.92);
       color: #FFFFFF;
-      padding: 8px 18px;
+      padding: 9px 20px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       z-index: 200;
       opacity: 0;
       transition: opacity 0.25s ease;
       pointer-events: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     #toast.show {
       opacity: 1;
@@ -639,12 +687,12 @@
 
   <!-- 頂部 Header -->
   <header>
-    <div class="header-badge">✈️ 崔董隨身旅遊手冊</div>
-    <h1>2027 倫敦・巴黎雙城遊</h1>
+    <div class="header-badge">✈️ 崔董隨身旅遊手冊 ｜ 2027 雙城旗艦版</div>
+    <h1>2027 倫敦・巴黎十日雙城遊</h1>
     <div class="header-meta">
       <span>🗓️ 2027.02.06 (五) – 2027.02.15 (日)</span>
       <span>•</span>
-      <span>⏱️ 10 天 8 夜 (雙鐵雙飛)</span>
+      <span>⏱️ 10 天 8 夜 (長榮直飛・雙鐵穿梭)</span>
     </div>
   </header>
 
@@ -656,7 +704,7 @@
     </div>
     <div class="tip-box">
       <span class="tip-label">天氣與穿搭參考</span>
-      <span class="tip-val">氣溫 4°C~9°C (防風大衣+好走靴)</span>
+      <span class="tip-val">氣溫 4°C~9°C (防風厚大衣+保暖靴)</span>
     </div>
   </div>
 
@@ -665,6 +713,7 @@
     <button class="tab-btn active" onclick="switchMainTab('itinerary', this)">📅 每日行程</button>
     <button class="tab-btn" onclick="switchMainTab('transit', this)">🚆 交通全覽</button>
     <button class="tab-btn" onclick="switchMainTab('hotels', this)">🏨 住宿資訊</button>
+    <button class="tab-btn" onclick="switchMainTab('paris-pocket', this)">🇫🇷 巴黎錦囊</button>
     <button class="tab-btn" onclick="switchMainTab('tickets', this)">🎫 票券與待辦</button>
     <button class="tab-btn" onclick="switchMainTab('emergency', this)">🆘 緊急聯絡</button>
   </nav>
@@ -710,10 +759,10 @@
       <section id="day1" class="card">
         <div class="card-header">
           <div class="card-title-group">
-            <span class="card-title">Day 1 ｜ 台北啟程 飛往巴黎</span>
+            <span class="card-title">Day 1 ｜ 台北啟程 直飛巴黎</span>
             <span class="card-subtitle">2027 年 2 月 6 日 (星期五)</span>
           </div>
-          <span class="tag tag-transit">長榮長途航程</span>
+          <span class="tag tag-transit">長榮夜航</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -722,9 +771,9 @@
             <div class="timeline-content">
               <div class="timeline-heading">
                 <span>桃園機場 (TPE) 第二航廈報到</span>
-                <span class="tag tag-booked">BR087</span>
+                <span class="tag tag-booked">BR087 已開票</span>
               </div>
-              <div class="timeline-desc">長榮航空直飛班機，行李直掛巴黎 CDG。檢查護照有效期（6個月以上）、UK ETA 申請回執。</div>
+              <div class="timeline-desc">長榮航空直飛班機，托運行李直掛巴黎 CDG。檢查護照有效期（6個月以上）及 UK ETA 電子簽證回執。</div>
             </div>
           </div>
           <div class="timeline-item">
@@ -732,7 +781,7 @@
             <div class="timeline-time">23:40</div>
             <div class="timeline-content">
               <div class="timeline-heading">起飛 🛫 台北 (TPE) → 巴黎 (CDG)</div>
-              <div class="timeline-desc">航程約 14 小時 10 分鐘。機上充分休息調整時差，建議多喝水保濕。</div>
+              <div class="timeline-desc">航程約 14 小時 10 分鐘。機上充分睡眠休息調整時差，建議多補水保濕。</div>
             </div>
           </div>
         </div>
@@ -742,7 +791,7 @@
       <section id="day2" class="card">
         <div class="card-header">
           <div class="card-title-group">
-            <span class="card-title">Day 2 ｜ 歐洲之星奔向倫敦・西區夜幕</span>
+            <span class="card-title">Day 2 ｜ 抵達巴黎 ➔ 歐洲之星奔向倫敦</span>
             <span class="card-subtitle">2027 年 2 月 7 日 (星期六)</span>
           </div>
           <span class="tag tag-london">倫敦入住 Assembly</span>
@@ -753,10 +802,10 @@
             <div class="timeline-time">06:50 (巴黎時間)</div>
             <div class="timeline-content">
               <div class="timeline-heading">抵達巴黎戴高樂機場 (CDG) T1</div>
-              <div class="timeline-desc">出關查驗與提領行李，步行前往 CDG 2 航廈搭乘 RER B 線直達巴黎北站 (Paris Gare du Nord)。</div>
-              <div class="transit-block">
-                <div class="route-line">🚆 CDG → 巴黎北站 (RER B 快車，約 35 分鐘)</div>
-                <div class="transit-note">票價約 €11.8。抵達北站後依 Eurostar 專屬指引前往 1 樓出境大廳。</div>
+              <div class="timeline-desc">順暢入境通關與領行李，搭乘 CDGVAL 機場電車轉乘 RER B 線直達巴黎北站 (Paris Gare du Nord)。</div>
+              <div class="transit-block paris-transit">
+                <div class="route-line">🚆 CDG ➔ 巴黎北站 (RER B 快車，約 35 分鐘)</div>
+                <div class="transit-note">票價約 €11.8。抵達巴黎北站後循「Eurostar」標誌前往 1 樓國際出境大廳。</div>
               </div>
             </div>
           </div>
@@ -766,12 +815,12 @@
             <div class="timeline-time">09:30 - 11:08</div>
             <div class="timeline-content">
               <div class="timeline-heading">
-                <span>歐洲之星通關與搭車</span>
+                <span>歐洲之星通關與發車</span>
                 <span class="tag tag-booked">已訂妥 #9023</span>
               </div>
               <div class="timeline-desc">
-                <strong>Eurostar 9023 次：</strong>11:08 發車 → 12:30 抵達倫敦 St Pancras Int'l。<br>
-                <em>提醒：</em>英法海關在北站合署辦公，安檢＋兩道海關（出法國、進英國）須提前 90 分鐘入閘。
+                <strong>Eurostar 9023 次：</strong>11:08 準點發車 → 12:30 抵達倫敦聖潘克拉斯 (St Pancras Int'l)。<br>
+                <em>通關提醒：</em>法英兩國海關在北站合署辦公，先過法國出境章再過英國入境檢查，務必提早 90 分鐘入閘。
               </div>
             </div>
           </div>
@@ -780,11 +829,11 @@
             <div class="timeline-dot"></div>
             <div class="timeline-time">12:30 (倫敦時間)</div>
             <div class="timeline-content">
-              <div class="timeline-heading">抵達倫敦聖潘克拉斯國際車站</div>
-              <div class="timeline-desc">轉換時差（倫敦慢巴黎 1 小時）。轉乘地鐵前往飯店辦理寄行李。</div>
+              <div class="timeline-heading">抵達倫敦 St Pancras ➔ 前往飯店寄行李</div>
+              <div class="timeline-desc">時差轉換（倫敦慢巴黎 1 小時）。轉乘地鐵前往飯店辦理寄放行李手續。</div>
               <div class="transit-block">
                 <div class="route-line">🚇 Piccadilly Line 直達 Leicester Square 站</div>
-                <div class="transit-note">車程約 10 分鐘，出站步行 2 分鐘即可抵達 Assembly Leicester Square 飯店。</div>
+                <div class="transit-note">車程僅約 10 分鐘，出站步行 2 分鐘即達 Assembly Leicester Square 飯店。</div>
               </div>
             </div>
           </div>
@@ -806,7 +855,7 @@
       <section id="day3" class="card">
         <div class="card-header">
           <div class="card-title-group">
-            <span class="card-title">Day 3 ｜ 泰晤士經典・大笨鐘與倫敦眼</span>
+            <span class="card-title">Day 3 ｜ 泰晤士經典・大笨鐘與波羅市集</span>
             <span class="card-subtitle">2027 年 2 月 8 日 (星期日)</span>
           </div>
           <span class="tag tag-london">英倫漫遊</span>
@@ -817,7 +866,7 @@
             <div class="timeline-time">09:30 - 12:00</div>
             <div class="timeline-content">
               <div class="timeline-heading">西敏寺、大笨鐘與白廳街</div>
-              <div class="timeline-desc">自飯店步行往特拉法加廣場 (Trafalgar Sq)，沿 Whitehall 漫步至西敏寺 (Westminster Abbey) 與大笨鐘拍照。</div>
+              <div class="timeline-desc">自飯店步行經特拉法加廣場 (Trafalgar Sq)，沿白廳漫步至西敏寺 (Westminster Abbey)、大笨鐘與倫敦眼拍照。</div>
             </div>
           </div>
           <div class="timeline-item">
@@ -825,10 +874,10 @@
             <div class="timeline-time">13:30 - 16:30</div>
             <div class="timeline-content">
               <div class="timeline-heading">泰晤士河南岸・Borough Market 波羅市集</div>
-              <div class="timeline-desc">橫跨西敏橋沿南岸漫步至波羅市集（生蠔、油封鴨肉堡、咖啡），再散步至倫敦塔橋 (Tower Bridge)。</div>
+              <div class="timeline-desc">沿南岸步道漫步至波羅市集（品嚐生蠔、現煎油封鴨肉堡、Monmouth 咖啡），散步至倫敦塔橋 (Tower Bridge)。</div>
               <div class="transit-block">
                 <div class="route-line">🚇 Jubilee Line 或 🚶‍♂️ 南岸散步漫遊</div>
-                <div class="transit-note">搭乘地鐵全程使用 Apple Pay / 信用卡感應刷進刷出即可。</div>
+                <div class="transit-note">搭乘倫敦地鐵全程使用 Apple Pay / 感應信用卡刷進刷出即可。</div>
               </div>
             </div>
           </div>
@@ -842,7 +891,7 @@
             <span class="card-title">Day 4 ｜ 大英博物館・攝政街英倫風尚</span>
             <span class="card-subtitle">2027 年 2 月 9 日 (星期一)</span>
           </div>
-          <span class="tag tag-london">文化藝術</span>
+          <span class="tag tag-london">文化與選品</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -850,15 +899,15 @@
             <div class="timeline-time">10:00 - 13:30</div>
             <div class="timeline-content">
               <div class="timeline-heading">大英博物館 (The British Museum)</div>
-              <div class="timeline-desc">羅塞塔石碑、帕德嫩神廟雕塑。館內大中庭採光極美（門票免費，但務必提前線上預訂入場時段）。</div>
+              <div class="timeline-desc">羅塞塔石碑、帕德嫩神廟雕塑、木乃伊展區。大中庭採光極美（門票免費，務必提前預約入場時段）。</div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-time">14:30 - 18:00</div>
             <div class="timeline-content">
-              <div class="timeline-heading">蘇活區 (Soho)・攝政街 (Regent St) 與 Liberty 百貨</div>
-              <div class="timeline-desc">品味倫敦街頭選物店、經典百年木質 Liberty 百貨、品嚐經典英式司康與下午茶。</div>
+              <div class="timeline-heading">蘇活區 (Soho)・攝政街與 Liberty 百貨</div>
+              <div class="timeline-desc">品味倫敦潮流選物店、百年木質經典 Liberty 百貨，品嚐英式經典司康下午茶。</div>
             </div>
           </div>
         </div>
@@ -868,10 +917,10 @@
       <section id="day5" class="card">
         <div class="card-header">
           <div class="card-title-group">
-            <span class="card-title">Day 5 ｜ 歐洲之星返回花都・巴黎左岸入住</span>
+            <span class="card-title">Day 5 ｜ 歐洲之星回巴黎・左岸小酒館微醺</span>
             <span class="card-subtitle">2027 年 2 月 10 日 (星期二)</span>
           </div>
-          <span class="tag tag-paris">轉移至巴黎 (5晚)</span>
+          <span class="tag tag-paris">轉移巴黎 (連住5晚)</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -879,19 +928,19 @@
             <div class="timeline-time">10:30</div>
             <div class="timeline-content">
               <div class="timeline-heading">倫敦飯店退房 ➔ St Pancras 車站</div>
-              <div class="timeline-desc">Assembly Leicester Square 辦理退房，搭乘 Piccadilly Line 直達聖潘克拉斯車站。</div>
+              <div class="timeline-desc">Assembly Leicester Square 辦理退房，搭乘地鐵 Piccadilly 線直達聖潘克拉斯車站。</div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot accent-dot"></div>
-            <div class="timeline-time">12:30 - 14:00 (建議車次)</div>
+            <div class="timeline-time">12:30 - 15:50 (建議午後車次)</div>
             <div class="timeline-content">
               <div class="timeline-heading">
-                <span>歐洲之星 St Pancras → Paris Nord</span>
-                <span class="tag tag-pending">待預訂</span>
+                <span>歐洲之星 St Pancras ➔ Paris Nord</span>
+                <span class="tag tag-pending">待預訂午後班次</span>
               </div>
               <div class="timeline-desc">
-                預計搭乘午後班次，車程約 2 小時 20 分鐘。抵達巴黎北站後，轉乘地鐵前往巴黎住宿（連住 5 晚）。
+                搭乘午後班次，車程約 2 小時 20 分鐘（抵達巴黎需將手錶撥快 1 小時）。抵達巴黎北站後轉乘地鐵前往巴黎住宿辦理 Check-in。
               </div>
             </div>
           </div>
@@ -900,7 +949,9 @@
             <div class="timeline-time">18:00 - 晚間</div>
             <div class="timeline-content">
               <div class="timeline-heading">塞納河畔漫步與巴黎小酒館 (Bistrot)</div>
-              <div class="timeline-desc">安頓行李後，前往聖日耳曼德佩區、花神咖啡館周邊散步，享用道地法式油封鴨與紅酒。</div>
+              <div class="timeline-desc">
+                安頓行李後，前往聖日耳曼德佩區、花神咖啡館周邊漫步。晚餐推薦造訪道地法式小酒館（品嚐紅酒燉牛肉、香酥油封鴨 Confit de Canard）。
+              </div>
             </div>
           </div>
         </div>
@@ -913,7 +964,7 @@
             <span class="card-title">Day 6 ｜ 羅浮宮殿堂・瑪黑區文青選品</span>
             <span class="card-subtitle">2027 年 2 月 11 日 (星期三)</span>
           </div>
-          <span class="tag tag-paris">巴黎經典</span>
+          <span class="tag tag-paris">藝術與巴黎風尚</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -921,15 +972,19 @@
             <div class="timeline-time">09:30 - 13:00</div>
             <div class="timeline-content">
               <div class="timeline-heading">羅浮宮 (Musée du Louvre)</div>
-              <div class="timeline-desc">蒙娜麗莎、勝利女神、米羅的維納斯。避開金字塔大排長龍，建議從卡魯索商場 (Carrousel du Louvre) 入口進入。</div>
+              <div class="timeline-desc">
+                鎮館三寶（蒙娜麗莎、勝利女神、維納斯）。避開金字塔排隊人潮，強烈建議從卡魯索商場 (Carrousel du Louvre) 地下入口進場！
+              </div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-time">14:30 - 18:30</div>
             <div class="timeline-content">
-              <div class="timeline-heading">瑪黑區 (Le Marais) 與孚日廣場</div>
-              <div class="timeline-desc">漫遊巴黎最時髦的瑪黑區，聚集獨立古著、設計品牌與著名的中東口袋餅 (L'As du Fallafel)。</div>
+              <div class="timeline-heading">瑪黑區 (Le Marais) 漫遊與孚日廣場</div>
+              <div class="timeline-desc">
+                漫遊巴黎最具文藝氣息的街區，探訪獨立古著、設計概念店。推薦品嚐排隊名店 L'As du Fallafel 中東口袋餅與 Pierre Hermé 玫瑰馬卡龍。
+              </div>
             </div>
           </div>
         </div>
@@ -950,10 +1005,10 @@
             <div class="timeline-time">08:00</div>
             <div class="timeline-content">
               <div class="timeline-heading">巴黎市區 ➔ 迪士尼 (RER A 紅線)</div>
-              <div class="timeline-desc">搭乘 RER A 線往 Marne-la-Vallée Chessy（終點站下車即達樂園大門，車程約 40 分鐘）。</div>
-              <div class="transit-block">
+              <div class="timeline-desc">搭乘 RER A 紅線往 Marne-la-Vallée Chessy（終點站下車即達樂園大門，車程約 40 分鐘）。</div>
+              <div class="transit-block paris-transit">
                 <div class="route-line">🚆 RER A 直達單程票 €5</div>
-                <div class="transit-note">請注意月台看板指示，認明往 Marne-la-Vallée Chessy 分支。</div>
+                <div class="transit-note">請務必認明月台看板終點站為 Marne-la-Vallée Chessy（米奇符號），切勿搭錯分支。</div>
               </div>
             </div>
           </div>
@@ -980,7 +1035,7 @@
             <span class="card-title">Day 8 ｜ 艾菲爾鐵塔・凱旋門與香榭麗舍</span>
             <span class="card-subtitle">2027 年 2 月 13 日 (星期五)</span>
           </div>
-          <span class="tag tag-paris">浪漫地標</span>
+          <span class="tag tag-paris">巴黎經典地標</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -988,7 +1043,7 @@
             <div class="timeline-time">10:00 - 12:30</div>
             <div class="timeline-content">
               <div class="timeline-heading">夏樂宮 (Trocadéro) & 艾菲爾鐵塔</div>
-              <div class="timeline-desc">夏樂宮露台眺望鐵塔最佳機位，步行穿越耶拿橋至戰神廣場野餐散步。</div>
+              <div class="timeline-desc">夏樂宮露台是眺望艾菲爾鐵塔的最佳全景機位，步行穿越耶拿橋至戰神廣場散步拍照。</div>
             </div>
           </div>
           <div class="timeline-item">
@@ -996,7 +1051,7 @@
             <div class="timeline-time">14:00 - 18:00</div>
             <div class="timeline-content">
               <div class="timeline-heading">凱旋門登頂 ➔ 香榭麗舍大道</div>
-              <div class="timeline-desc">俯瞰星形放射狀十二條大道壯闊景觀，沿著香榭麗舍漫步購物、品嚐 Ladurée 馬卡龍。</div>
+              <div class="timeline-desc">登上凱旋門頂樓俯瞰星形放射狀十二條大道壯闊景觀，漫步香榭麗舍旗艦大道購物、品嚐法式甜點。</div>
             </div>
           </div>
         </div>
@@ -1009,7 +1064,7 @@
             <span class="card-title">Day 9 ｜ 蒙馬特高地・聖心堂與老佛爺採買</span>
             <span class="card-subtitle">2027 年 2 月 14 日 (星期六)</span>
           </div>
-          <span class="tag tag-paris">浪漫情人節</span>
+          <span class="tag tag-paris">情人節浪漫特調</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -1017,15 +1072,15 @@
             <div class="timeline-time">10:00 - 13:00</div>
             <div class="timeline-content">
               <div class="timeline-heading">蒙馬特 (Montmartre) 聖心堂 & 愛牆</div>
-              <div class="timeline-desc">俯瞰巴黎全市全景、小丘廣場畫家村、找尋用 250 種語言寫著我愛你的「愛牆」。</div>
+              <div class="timeline-desc">俯瞰巴黎全市壯麗天際線、探訪小丘廣場畫家村，以及用 250 種語言寫著「我愛你」的愛牆 (Le mur des je t'aime)。</div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-time">14:30 - 18:00</div>
+            <div class="timeline-time">14:30 - 18:30</div>
             <div class="timeline-content">
-              <div class="timeline-heading">奧斯曼大道・老佛爺百貨 (Galeries Lafayette)</div>
-              <div class="timeline-desc">百年彩色玻璃穹頂，採購伴手禮與法式甜點，順道辦理市區退稅單手續。</div>
+              <div class="timeline-heading">奧斯曼大道・老佛爺百貨採買伴手禮</div>
+              <div class="timeline-desc">參觀百年彩色玻璃穹頂，採買法式名產、香水與伴手禮，順道辦理市區退稅手續。</div>
             </div>
           </div>
         </div>
@@ -1035,10 +1090,10 @@
       <section id="day10" class="card">
         <div class="card-header">
           <div class="card-title-group">
-            <span class="card-title">Day 10 ｜ 巴黎退稅・長榮啟程返台</span>
+            <span class="card-title">Day 10 ｜ 戴高樂電子退稅・長榮返台</span>
             <span class="card-subtitle">2027 年 2 月 15 日 (星期日)</span>
           </div>
-          <span class="tag tag-transit">長榮長途航程</span>
+          <span class="tag tag-transit">長榮航直飛返台</span>
         </div>
         <div class="timeline">
           <div class="timeline-item">
@@ -1046,10 +1101,10 @@
             <div class="timeline-time">07:30</div>
             <div class="timeline-content">
               <div class="timeline-heading">前往戴高樂機場 (CDG) Terminal 1</div>
-              <div class="timeline-desc">搭乘預約包車或 RER B 線前往機場。國際航班請務必於起飛前 3~3.5 小時抵達。</div>
-              <div class="transit-block">
-                <div class="route-line">⚠️ 退稅重點：PABLO 電子退稅機台</div>
-                <div class="transit-note">領取登機證前，先至退稅機台掃描條碼（出現綠色勾勾即可免排隊人工海關蓋章）。</div>
+              <div class="timeline-desc">搭乘預約專車或 RER B 線前往機場。國際航班請務必於起飛前 3.5 小時抵達預留退稅時間。</div>
+              <div class="transit-block paris-transit">
+                <div class="route-line">⚠️ 退稅關鍵：PABLO 電子退稅機台</div>
+                <div class="transit-note">託運行李前，先在退稅機台掃描條碼，螢幕出現綠色勾勾即代表審核通過，無需排隊找人工海關蓋章！</div>
               </div>
             </div>
           </div>
@@ -1061,7 +1116,7 @@
                 <span>起飛 🛫 巴黎 (CDG) → 台北 (TPE)</span>
                 <span class="tag tag-booked">BR088 直飛</span>
               </div>
-              <div class="timeline-desc">預計於次日 2/16 (一) 清晨 07:00 平安抵達桃園機場，滿載英倫與巴黎美好回憶！</div>
+              <div class="timeline-desc">預計於次日 2/16 (一) 清晨 07:00 平安抵達桃園機場 T2，圓滿結束英法十日精彩旅程！</div>
             </div>
           </div>
         </div>
@@ -1101,8 +1156,8 @@
             <div class="detail-item-val">計件制 23kg × 2 件</div>
           </div>
           <div>
-            <div class="detail-item-label">轉乘提醒</div>
-            <div class="detail-item-val">抵達 CDG 後搭 RER B 直奔北站</div>
+            <div class="detail-item-label">抵達轉乘</div>
+            <div class="detail-item-val">CDGVAL 轉 RER B 奔巴黎北站</div>
           </div>
         </div>
       </div>
@@ -1128,16 +1183,16 @@
         </div>
         <div class="ticket-detail-grid">
           <div>
-            <div class="detail-item-label">發車站檢票口</div>
-            <div class="detail-item-val">北站 1 樓 Eurostar 專屬閘門</div>
+            <div class="detail-item-label">檢票閘口</div>
+            <div class="detail-item-val">巴黎北站 1 樓 Eurostar 專屬閘口</div>
           </div>
           <div>
-            <div class="detail-item-label">最晚報到時間</div>
-            <div class="detail-item-val">09:30 (提前 90~120 分鐘)</div>
+            <div class="detail-item-label">建議報到</div>
+            <div class="detail-item-val">09:30 (提早 90~120 分鐘)</div>
           </div>
           <div>
-            <div class="detail-item-label">通關流程</div>
-            <div class="detail-item-val">行李安檢 ➔ 法國出境 ➔ 英國入境</div>
+            <div class="detail-item-label">雙邊海關</div>
+            <div class="detail-item-val">法國出境 ➔ 英國入境（合署辦公）</div>
           </div>
         </div>
       </div>
@@ -1167,12 +1222,12 @@
             <div class="detail-item-val">2/10 12:30 ~ 13:30 班次</div>
           </div>
           <div>
-            <div class="detail-item-label">時差推進</div>
-            <div class="detail-item-val">進入巴黎需將手錶撥快 1 小時</div>
+            <div class="detail-item-label">時差提醒</div>
+            <div class="detail-item-val">進入法國撥快 1 小時</div>
           </div>
           <div>
-            <div class="detail-item-label">聖潘克拉斯報到</div>
-            <div class="detail-item-val">地面層出境大廳排隊安檢</div>
+            <div class="detail-item-label">聖潘克拉斯安檢</div>
+            <div class="detail-item-val">地面層出境閘口提早 90 分鐘</div>
           </div>
         </div>
       </div>
@@ -1208,7 +1263,7 @@
         </div>
       </div>
 
-      <!-- 市區地鐵與票卡操作指引 (超實用) -->
+      <!-- 市區地鐵與票卡操作指引 -->
       <div class="card">
         <div class="card-header">
           <div class="card-title-group">
@@ -1284,40 +1339,180 @@
         </div>
       </div>
 
-      <!-- 巴黎飯店 -->
+      <!-- 巴黎飯店區位深度指南 -->
       <div class="card">
         <div class="card-header">
           <div class="card-title-group">
-            <span class="card-title">巴黎市中心旅宿 (五晚連住)</span>
-            <span class="card-subtitle">Paris Central Stay (Feb 10 - Feb 15)</span>
+            <span class="card-title">巴黎市中心精選住宿策略 (連住 5 晚)</span>
+            <span class="card-subtitle">2027.02.10 (二) – 02.15 (日)</span>
           </div>
           <span class="tag tag-paris">巴黎 (5晚)</span>
         </div>
 
         <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
-          <span class="hotel-badge">📍 塞納河/瑪黑/歌劇院精華商圈</span>
-          <span class="hotel-badge">🍷 雙城後續放鬆基地</span>
+          <span class="hotel-badge">📍 推薦 1、6、7、8 區</span>
+          <span class="hotel-badge">🛡️ 頂級治安與文藝商圈</span>
+          <span class="hotel-badge">🚇 地鐵樞紐交會</span>
         </div>
 
         <ul class="info-list">
           <li>
-            <span class="info-key">入住 / 退房日期</span>
-            <span class="info-val">2027.02.10 (二) – 02.15 (日) ｜ 5 晚</span>
+            <span class="info-key">入住天數</span>
+            <span class="info-val">2/10 入住至 2/15 退房（共 5 晚）</span>
           </li>
           <li>
             <span class="info-key">退房前往機場</span>
-            <span class="info-val">2/15 早晨 07:30 出發赴 CDG 機場</span>
+            <span class="info-val">2/15 早晨 07:30 出發赴 CDG T1</span>
+          </li>
+          <li>
+            <span class="info-key">首選區位 A（左岸文藝）</span>
+            <span class="info-val">第 6 區聖日耳曼德佩（治安極佳、咖啡館林立）</span>
+          </li>
+          <li>
+            <span class="info-key">首選區位 B（右岸尊爵）</span>
+            <span class="info-val">第 1 區羅浮宮周邊 / 第 8 區香榭麗舍</span>
           </li>
         </ul>
 
-        <div class="alert-box">
-          💡 <strong>入住貼心提醒：</strong>巴黎飯店大多提供提前寄放行李服務。2/10 搭歐洲之星抵達後，可直接先將大件行李送至飯店櫃檯，輕裝出門遊覽塞納河畔。
+        <div class="alert-box success">
+          💡 <strong>巴黎住宿黃金法則：</strong>選擇緊鄰地鐵 1 號線（連通羅浮宮、香榭麗舍）或 4 號線的市中心核心安全區，連住 5 晚免搬行李，遊玩回房最輕鬆。
         </div>
       </div>
     </main>
   </div>
 
-  <!-- TAB 4: 票券與待辦 (TICKETS & CHECKLIST) -->
+  <!-- TAB 4: 巴黎隨身錦囊 (PARIS POCKET GUIDE) -->
+  <div id="tab-paris-pocket" class="tab-content">
+    <main>
+      <!-- 巴黎防扒防坑教戰守則 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-title">🛡️ 巴黎治安與防扒防坑守則</span>
+            <span class="card-subtitle">掌握三大常見手法，出遊安心自在</span>
+          </div>
+          <span class="tag tag-paris">必備警覺</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="alert-box danger" style="margin-top: 0;">
+            <strong>1. 蒙馬特聖心堂階梯「幸運手環黨」：</strong><br>
+            • <em>手法：</em>黑人男子會主動靠近，趁遊客不備把編織手環強行套在手指上，隨後索討 €10~€20。<br>
+            • <em>破解：</em>雙手插進大衣口袋，眼神堅定並大聲說「Non, merci!」直接繞道通過，絕不停步。
+          </div>
+
+          <div class="alert-box" style="margin-top: 0;">
+            <strong>2. 羅浮宮 / 鐵塔「假志工簽名黨」：</strong><br>
+            • <em>手法：</em>手持夾板自稱代表聾啞或慈善機構要求簽名，一旦停下簽名就會圍上來要錢或趁機扒竊。<br>
+            • <em>破解：</em>揮手搖頭不要理會，視線直視前方快步離開。
+          </div>
+
+          <div class="alert-box" style="margin-top: 0;">
+            <strong>3. 巴黎地鐵「門邊抽手機」：</strong><br>
+            • <em>手法：</em>站在車廂門邊滑手機，列車關門鳴笛瞬間被月台小偷一把搶走跳出車外。<br>
+            • <em>破解：</em>車廂靠門處避免將手機拿在手中，背包背在胸前，進出站注意身後貼太近的人。
+          </div>
+        </div>
+      </div>
+
+      <!-- 法式實用發音與常用小卡 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-title">🥖 法國用餐禮儀與實用句子</span>
+            <span class="card-subtitle">點擊即可複製發音與文字</span>
+          </div>
+          <span class="tag tag-paris">一秒變在地</span>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-sub); margin-bottom: 10px;">
+          ⚠️ <strong>法式最重要禮儀：</strong>進入任何商店、餐廳或與人對話前，請務必先打招呼說 <em>Bonjour</em>，這是法國人最在意的基本禮貌！
+        </p>
+
+        <div class="phrase-grid">
+          <div class="phrase-item">
+            <div>
+              <div class="phrase-fr">Bonjour !</div>
+              <div class="phrase-zh">你好 / 早安（進店必說）</div>
+            </div>
+            <button class="copy-btn" onclick="copyText('Bonjour', '已複製：Bonjour')">📋 複製</button>
+          </div>
+
+          <div class="phrase-item">
+            <div>
+              <div class="phrase-fr">S'il vous plaît</div>
+              <div class="phrase-zh">請 / Please（點餐詢問加這句）</div>
+            </div>
+            <button class="copy-btn" onclick="copyText('S\'il vous plaît', '已複製：S\'il vous plaît')">📋 複製</button>
+          </div>
+
+          <div class="phrase-item">
+            <div>
+              <div class="phrase-fr">Merci beaucoup !</div>
+              <div class="phrase-zh">非常感謝！</div>
+            </div>
+            <button class="copy-btn" onclick="copyText('Merci beaucoup !', '已複製：Merci beaucoup !')">📋 複製</button>
+          </div>
+
+          <div class="phrase-item">
+            <div>
+              <div class="phrase-fr">L'addition, s'il vous plaît.</div>
+              <div class="phrase-zh">請給我帳單（結帳必備）</div>
+            </div>
+            <button class="copy-btn" onclick="copyText('L\'addition, s\'il vous plaît.', '已複製：L\'addition, s\'il vous plaît.')">📋 複製</button>
+          </div>
+
+          <div class="phrase-item">
+            <div>
+              <div class="phrase-fr">Une carafe d'eau, s'il vous plaît.</div>
+              <div class="phrase-zh">請給我一壺常溫自來水（免費水）</div>
+            </div>
+            <button class="copy-btn" onclick="copyText('Une carafe d\'eau, s\'il vous plaît.', '已複製：Une carafe d\'eau')">📋 複製</button>
+          </div>
+
+          <div class="phrase-item">
+            <div>
+              <div class="phrase-fr">Où sont les toilettes ?</div>
+              <div class="phrase-zh">請問洗手間在哪裡？</div>
+            </div>
+            <button class="copy-btn" onclick="copyText('Où sont les toilettes ?', '已複製：Où sont les toilettes ?')">📋 複製</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CDG T1 PABLO 電子退稅指南 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-title">🛍️ CDG T1 PABLO 電子退稅指南</span>
+            <span class="card-subtitle">回程 2/15 離境戴高樂 T1 必備</span>
+          </div>
+          <span class="tag tag-booked">重要流程</span>
+        </div>
+
+        <ul class="info-list">
+          <li>
+            <span class="info-key">Step 1 ｜ 購物取得退稅單</span>
+            <span class="info-val">老佛爺或精品店購物索取有 PABLO 條碼的退稅單</span>
+          </li>
+          <li>
+            <span class="info-key">Step 2 ｜ 抵達 CDG T1 找機台</span>
+            <span class="info-val">進入航廈先不要託運行李，前往「Détaxe / Tax Refund」機台區</span>
+          </li>
+          <li>
+            <span class="info-key">Step 3 ｜ 掃描條碼認綠勾</span>
+            <span class="info-val">選擇中文介面，條碼掃過螢幕顯示<strong>綠色勾勾</strong>即完成認證！</span>
+          </li>
+          <li>
+            <span class="info-key">Step 4 ｜ 行李託運與出境</span>
+            <span class="info-val">退回信用卡約 2-4 週入帳，免再排人工海關蓋章</span>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- TAB 5: 票券與待辦 (TICKETS & CHECKLIST) -->
   <div id="tab-tickets" class="tab-content">
     <main>
       <div class="card">
@@ -1386,7 +1581,7 @@
         <div class="card-header">
           <div class="card-title-group">
             <span class="card-title">🧳 隨身行李與必備清單</span>
-            <span class="card-subtitle">避免漏帶的雙重防線</span>
+            <span class="card-subtitle">出發前防漏檢查</span>
           </div>
         </div>
 
@@ -1396,12 +1591,12 @@
             <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox" checked> 護照 (效期>6個月)</label>
             <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> UK ETA 批准核可證明</label>
             <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> 實體海外感應信用卡 2 張</label>
-            <label style="display: flex; align-items: center; gap: 6px;"><input type="checkbox"> 英鎊 / 歐元適量現金</label>
+            <label style="display: flex; align-items: center; gap: 6px;"><input type="checkbox"> 英鎊 / 歐元備用現金</label>
           </div>
           <div>
             <div style="font-weight: 700; color: var(--accent); margin-bottom: 6px;">🔌 3C 與配件</div>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> 英規轉接頭 (品字型三腳)</label>
-            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> 歐規轉接頭 (雙圓腳)</label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> 英規三腳轉接頭</label>
+            <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> 歐規雙圓腳轉接頭</label>
             <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;"><input type="checkbox"> 10,000mAh 行動電源</label>
             <label style="display: flex; align-items: center; gap: 6px;"><input type="checkbox"> 歐洲跨國 eSIM / 上網卡</label>
           </div>
@@ -1410,7 +1605,7 @@
     </main>
   </div>
 
-  <!-- TAB 5: 緊急聯絡 (EMERGENCY) -->
+  <!-- TAB 6: 緊急聯絡 (EMERGENCY) -->
   <div id="tab-emergency" class="tab-content">
     <main>
       <div class="card">
@@ -1435,7 +1630,7 @@
           <li>
             <div>
               <div style="font-weight: 700;">駐英國台北代表處 (TRO London)</div>
-              <div style="font-size: 11px; color: var(--text-muted);">緊急救助電話 (非急難請勿撥打)</div>
+              <div style="font-size: 11px; color: var(--text-muted);">緊急救助電話</div>
             </div>
             <div>
               <button class="copy-btn" onclick="copyText('+44 7768 938 765', '已複製駐英急難電話')">📞 +44 7768 938 765</button>
@@ -1481,19 +1676,19 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 12.5px;">
           <div style="background: #F9F9F8; padding: 10px; border-radius: 8px;">
             <div style="font-weight: 700;">Citymapper</div>
-            <div style="color: var(--text-muted); font-size: 11px;">倫敦與巴黎最強大眾交通路線導航</div>
+            <div style="color: var(--text-muted); font-size: 11px;">英法最強大眾交通導航</div>
           </div>
           <div style="background: #F9F9F8; padding: 10px; border-radius: 8px;">
             <div style="font-weight: 700;">Eurostar 官方 App</div>
-            <div style="color: var(--text-muted); font-size: 11px;">儲存電子車票、即時發車月台通知</div>
+            <div style="color: var(--text-muted); font-size: 11px;">存電子票與即時月台推播</div>
           </div>
           <div style="background: #F9F9F8; padding: 10px; border-radius: 8px;">
             <div style="font-weight: 700;">Bonjour RATP</div>
-            <div style="color: var(--text-muted); font-size: 11px;">巴黎地鐵官方路況與手機儲值 Navigo</div>
+            <div style="color: var(--text-muted); font-size: 11px;">巴黎地鐵路況與 Navigo 儲值</div>
           </div>
           <div style="background: #F9F9F8; padding: 10px; border-radius: 8px;">
             <div style="font-weight: 700;">Google 翻譯</div>
-            <div style="color: var(--text-muted); font-size: 11px;">相機鏡頭即時翻譯法文菜單標示</div>
+            <div style="color: var(--text-muted); font-size: 11px;">相機鏡頭即時翻譯法文菜單</div>
           </div>
         </div>
       </div>
@@ -1513,6 +1708,10 @@
     <button class="bottom-action-btn" id="btn-nav-hotels" onclick="triggerMainTab('hotels')">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
       <span>住宿</span>
+    </button>
+    <button class="bottom-action-btn" id="btn-nav-paris-pocket" onclick="triggerMainTab('paris-pocket')">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/></svg>
+      <span>巴黎錦囊</span>
     </button>
     <button class="bottom-action-btn" id="btn-nav-tickets" onclick="triggerMainTab('tickets')">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg>
@@ -1542,16 +1741,14 @@
       if (btnElement) {
         btnElement.classList.add('active');
       } else {
-        // 同步頂部按鈕狀態
         const topBtns = document.querySelectorAll('.tab-btn');
         topBtns.forEach(btn => {
-          if (btn.getAttribute('onclick').includes(tabId)) {
+          if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(tabId)) {
             btn.classList.add('active');
           }
         });
       }
 
-      // 同步底部按鈕狀態
       const bottomBtn = document.getElementById('btn-nav-' + tabId);
       if (bottomBtn) bottomBtn.classList.add('active');
 
